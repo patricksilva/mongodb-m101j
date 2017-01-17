@@ -15,7 +15,7 @@ Summary, MongoDB enables application developers to design data models that make 
 That is, those that efficiently support common data access patterns.
 MongoDB is designed to support agile software engineering practices and meet the scalability and performance needs of modern applications.
 
-
+```
 End to end view of what an application might look like using Java
 {
 	MongoDB, Mongo(shell), Java Applications { Frameworks:{ SparkJava(inspired by Sinatra), FreeMarker}}
@@ -37,7 +37,7 @@ End to end view of what an application might look like using Java
 	And so the motivating example for some of the work is this blog.
 	But we do not expect yout to be able to create this whole thing from scratch for this course.
 }
-
+```
 
 ### Installing MongoDB
 
