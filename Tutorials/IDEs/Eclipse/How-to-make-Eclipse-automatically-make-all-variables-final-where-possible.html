@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>How to make Eclipse automatically make all variables "final" (where possible)?</title>
+	<style>
+	.container {
+		width: 640px;
+		height: 480px;
+	}
+
+	/* resize images */
+	.container img {
+		width: 100%;
+		height: auto;
+	}
+	</style>
+</head>
+<body>
+	<h3>How to make Eclipse automatically make all variables "final" (where possible)?</h3>
+	<p>You can add it as a 'Save Action' so that whenever you save a file, Eclipse will add final to your variables. This is how:</p>
+	<ul>
+		<li>Go to Window > Preferences > Java > Editor > Save Actions</li>
+		<li>Tick Additional Actions and press Configure</li>
+		<li>In the Code Style tab there is a section on Variable declarations and you can tick Use modifier 'final' where possible.You can choose between private fields, parameters and local variables.</li>
+	</ul>
+	<h4>Or you can do the same thing manually (every once in while or for existing code base) via Clean up</h4>
+	<h3>Screenshots</h3>
+	<div class="container"><img src="imgs/Window-Preferences.png" alt="Window Preferences"></div>
+	<div class="container"><img src="imgs/Preferences.png" alt="Preferences"></div>
+	<div class="container"><img src="imgs/Preferences-java-editor-save-actions-additional-actions-configure.png" alt="Preferences java editor save actions additional actions configure"></div>
+	<div class="container"><img src="imgs/Additional-save-actions-code-style-variable-declarations-use-modifier-final-where-possible-private-fields-parameter-local-variables.png" alt="Additional save actions code style variable declarations use modifier final where possible private fields parameter local variables"></div>
+	<h3>References:</h3>
+	<ul>
+		<li><a href="http://stackoverflow.com/questions/11398194/is-there-a-way-to-have-eclipse-automatically-make-all-my-variables-final">dogbane and Deepak Azad @Stack Overflow</a></li>
+		<li><a href="http://stackoverflow.com/questions/15685666/changing-image-sizes-proportionally-using-css">Changing image sizes proportional using css</a></li>
+	</ul>
+</body>
+</html>
