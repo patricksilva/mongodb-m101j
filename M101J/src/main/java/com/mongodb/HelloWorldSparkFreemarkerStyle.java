@@ -1,5 +1,7 @@
 package com.mongodb;
 
+import static spark.Spark.halt;
+
 import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,10 +12,9 @@ import spark.Request;
 import spark.Response;
 import spark.Route;
 import spark.Spark;
-import static spark.Spark.*;
 
 public class HelloWorldSparkFreemarkerStyle {
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		
 		/*
 		 * This is the Freemarker configuration
@@ -40,22 +41,22 @@ public class HelloWorldSparkFreemarkerStyle {
 				/*
 				 * We also created a string writer. That the Freemarker processes the template into. 
 				 * */
-				StringWriter writer = new StringWriter();
+				final StringWriter writer = new StringWriter();
 
 				try {
-					Template helloTemplate = configuration.getTemplate("hello.ftl");
+					final Template helloTemplate = configuration.getTemplate("hello.ftl");
 					
 					/*
 					 * We defined a map with the "name" "key" and the value os "Fremarker".
 					 * */
-					Map<String, Object> helloMap = new HashMap<String, Object>();
+					final Map<String, Object> helloMap = new HashMap<String, Object>();
 					helloMap.put("name", "Freemarker based WebSite!");
 					
 					/*
 					 * We process the template
 					 * */
 					helloTemplate.process(helloMap, writer);
-				} catch (Exception e) {
+				} catch (final Exception e) {
 					halt(500); 
 					e.printStackTrace();
 					
