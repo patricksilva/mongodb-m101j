@@ -40,6 +40,18 @@ public class SparkFormHandling {
 				}
 			}
 		});
+		
+		Spark.post("/favorite_fruit", new Route(){
+			@Override
+			public Object handle(final Request request, final Response response) {
+				final String fruit = request.queryParams("fruit");
+				if (fruit == null) {
+					return "Why don't you pick one fruit?";
+				} else {
+					return "Your favorite fruit is " + fruit;
+				}
+			}
+		});
 	}
 
 }
