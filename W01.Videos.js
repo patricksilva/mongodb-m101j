@@ -132,3 +132,10 @@ Add the spark dependency:
 
 https://university.mongodb.com/courses/MongoDB/M101J/2017_January/courseware/Week_1_Introduction/52549da3e2d4231cc6084010/vertical_22b7b7697881
 1:40
+
+
+
+#### Restoring dump
+
+> mongorestore dump
+
