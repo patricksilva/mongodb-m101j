@@ -1,0 +1,29 @@
+Intro to Schema Design
+
+Q: To embed or not to embed? When should I embed attributes in a document oriented design?
+A: Everytime in are in a situation where you realize that they are typically accessed at the same time (ex: the blog posts, tags and authors)
+Or, when it if very rare that you would need to access the tags independently of accessing a post or the comments.
+And the comment itself does not apply to more than one post.
+Now, it is true, in the case of the tags, if this is, let's say cycling, and this running.
+If we wanted to change the word cycling to biking in every single post, that would be kind of tedious since it is not relationally connected.
+But this is an unusual change to make it, something you are not going to make all the time.
+And so it makes sense that you would put these tags directly into the post collection itself.
+And generally, when you are deciding whether to embed or not to embed, it is going to be the way you access the data
+that is going to decide that, along with some other practical considerations.
+For example, in MongoDB, a document can not be more than 16 megabytes.
+So if you were going to have more than 16 megabytes of comments, which would be extremely unusual, then you would have to put the comments themselves into a separate collection.
+
+Q: In which scenario is it impossible to embed data within a document (you must put the data in a separate collection)?
+A: The embedded data could exceed the 16Mb document limit within MongoDB.
+
+
+
+
+> db.grades.aggregate({'$group':{'_id':'$student_id', 'average':{$avg:'$score'}}}, {'$sort':{'average':-1}}, {'$limit':1})
+
+> db.users.find()
+{ "_id" : "erlichson", "password" : "VH9IFu+/vUNSKTzZsFZEOsK1,-1924261330" }
+>
+> db.sessions.find()
+{ "_id" : "AN4M7warH+fdKOszU8qnd2Hmfn8JZFFZ9sff4zcPRpw=", "username" : "erlichson" }
+>
